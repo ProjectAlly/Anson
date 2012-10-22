@@ -36,8 +36,9 @@ class AppController extends Controller {
 	var $helpers = array('AssetCompress.AssetCompress');
 	
 	public $uses = array('UserInfo');
-	
+	//Manually defined functions
 	public function authenticate() {
+		//function to authenticate a user
 		$test = $this->UserInfo->Find('first',array('conditions' => 
 												array('UserInfo.inputEmail' => $this->data['UserInfo']['inputEmail'],
 													  'UserInfo.inputPassword' => $this->data['UserInfo']['inputPassword'],
@@ -60,22 +61,9 @@ class AppController extends Controller {
 		else 
 		{
 			echo "login successful";
+			$this->redirect(array('controller' => 'Home', 'action' => 'HomePage'));
 			exit();
-			switch ($test['UserInfo']['userRole'])
-			{
-				case 1:
-					$this->redirect(array('controller' => 'SuperAdmin', 'action' => 'index'));
-					break;
-				case 2:
-					$this->redirect(array('controller' => 'Admin', 'action' => 'index'));
-					break;
-				case 3:
-					$this->redirect(array('controller' => 'Employee', 'action' => 'index'));
-					break;
-				default:
-					$this->redirect(array('controller' => 'User', 'action' => 'index'));
-					break;
-			}
+			
 		}
 		//echo $test['UserInfo']['accessPermission']; 
 		exit();
@@ -83,8 +71,10 @@ class AppController extends Controller {
 	}
 	
 	public function logout() {
+		//function to logout
 		$this->Session->destroy();
 		$this->redirect(array('controller' => 'home', 'action' => 'index'));
 	}
+
 }
 

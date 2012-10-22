@@ -94,6 +94,10 @@ class HomeController extends AppController {
 		}
 	}
 	
+	public function HomePage() {
+		
+	}
+	
 	
 	
 	public function userProfile() {
@@ -103,11 +107,7 @@ class HomeController extends AppController {
 												array('Profile.id' => $this->Session->read('id')))));
 	}
 	
-	public function viewProfile($id = null){
-		$this->Register->id = $id;
-		$this->set('user', $this->Register->find('first', array('conditions' => array('Register.id' => $id))));
-		$this->set('proUser', $this->Profile->find('first', array('conditions' => array('Profile.id' => $id))));
-	}
+	
 	
 	
 	public function test() {
@@ -180,12 +180,5 @@ class HomeController extends AppController {
 		$this->set('projects', $this->AddProject->find('all'));
 	}
 	
-	public function viewMembers($id = null) {
-		$this->AddProject->id = $id;
-		$this->set('project', $this->AddProject->find('first', array('conditions' => 
-																	array('AddProject.id' => $id))));
-		$this -> set('users', $this->Register->find('all' ,array('conditions' => 
-																array('Register.id >' => 'Register.id',
-																'Register.status' => '1'))));
-	}
+	
 }
