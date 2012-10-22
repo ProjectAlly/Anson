@@ -18,7 +18,7 @@
 								{
 									?><tr> <td> 
 										<?php echo $this->Html->link($user['Register']['userName'], 
-													array('controller' => 'Home', 'action' => 'viewProfile', $user['Register']['id'])); ?>
+													array('controller' => 'Employee', 'action' => 'viewProfile', $user['Register']['id'])); ?>
 									   </td> </tr>			
 									<?php 
 								}

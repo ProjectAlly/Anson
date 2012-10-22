@@ -99,17 +99,6 @@ class HomeController extends AppController {
 	}
 	
 	
-	
-	public function userProfile() {
-		$this->set('user', $this->Register->find('first', array('conditions' => 
-												array('Register.id' => $this->Session->read('id')))));
-		$this->set('proUser', $this->Profile->find('first', array('conditions' => 
-												array('Profile.id' => $this->Session->read('id')))));
-	}
-	
-	
-	
-	
 	public function test() {
 		echo "you successfully registered with projectally....kindly wait till admin approves yours request.";
 	}
@@ -148,31 +137,7 @@ class HomeController extends AppController {
 		
 	}
 			
-	public function addProject() {
-		if(!empty($this->data)){
-			if($this->AddProject->save($this->data)){
-				$role = $this->Session->read('role');
-				switch ($role)
-				{
-					case 1:
-						$this->redirect(array('controller' => 'SuperAdmin', 'action' => 'listProject'));
-						break;
-					case 2:
-						$this->redirect(array('controller' => 'Admin', 'action' => 'index'));
-						break;
-					case 3:
-						$this->redirect(array('controller' => 'Employee', 'action' => 'index'));
-						break;
-					default:
-						echo "User";
-						break;
-				}
-				
-			} else {
-				$this->Session->setFlash('Your stuff has been saved.');
-			}
-		}
-	}
+	
 	
 	
 	public function listProject() {
