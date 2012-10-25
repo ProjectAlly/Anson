@@ -3,7 +3,21 @@
 /* ===== Primary Styles ========================================================
    Author:
    ========================================================================== */
-
+#add-navbar{
+    background: none repeat scroll 0 0 #F1F1F1;
+    border-bottom: 1px solid #E5E5E5;
+    border-color: #E5E5E5;
+    height: 71px;
+    min-width: 980px;
+    position: relative;
+    top: -20px;
+    width: 100%;
+    z-index: 985;
+}
+#add-navbar ul {
+	padding-left:100px; 
+	padding-right:100px;
+}
 
 
 

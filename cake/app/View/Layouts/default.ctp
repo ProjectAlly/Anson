@@ -65,6 +65,20 @@
 		</div>
 	</div>
 </div>
+	<div id="add-navbar">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+
+			<ul class="nav nav-tabs">
+			  <li class="active">
+			    <a href="#">Hello</a>
+			  </li>
+			  <li><a href="#">Hello</a></li>
+			  <li><a href="#">Hello</a></li>
+			</ul>
+	</div>
+
 <div class="container">
 	<div id="content">
 
