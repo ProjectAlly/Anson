@@ -59,10 +59,10 @@ class HomeController extends AppController {
 			$name = $this->Session->read('name');
 			$role = $this->Session->read('role');
 			if (isset($name)) {
-				switch ($role)
+				/*switch ($role)
 				{
 					case 1:
-						$this->redirect(array('controller' => 'SuperAdmin', 'action' => 'index'));
+						$this->redirect(array('controller' => 'Home', 'action' => 'HomePage'));
 						break;
 					case 2:
 						$this->redirect(array('controller' => 'Admin', 'action' => 'index'));
@@ -73,8 +73,9 @@ class HomeController extends AppController {
 					default:
 						echo "User";
 						break;
-				}	
-			}
+				}*/
+			$this->redirect(array('controller' => 'Home', 'action' => 'HomePage'));
+		}
 		}
 		
 	}
@@ -97,7 +98,6 @@ class HomeController extends AppController {
 	public function HomePage() {
 		
 	}
-	
 	
 	public function test() {
 		echo "you successfully registered with projectally....kindly wait till admin approves yours request.";
@@ -137,13 +137,8 @@ class HomeController extends AppController {
 		
 	}
 			
-	
-	
-	
 	public function listProject() {
 		$this->set(compact('title_for_layout'));
 		$this->set('projects', $this->AddProject->find('all'));
 	}
-	
-	
 }
