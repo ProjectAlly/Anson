@@ -72,8 +72,8 @@
 			<?php 
 			$name = $this->Session->read('name');
 			if(isset($name)) {?>
-			<ul class="nav nav-pills" style="padding-right: 100px;">
-			  <li class="dropdown" style="float: right;" >
+			<ul class="nav nav-pills" style="padding-right: 100px; padding-left:100px">
+			  <li class="dropdown" style="float: right;">
 			    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
 			        <?php echo $name; ?>
 			        <b class="caret"></b>
