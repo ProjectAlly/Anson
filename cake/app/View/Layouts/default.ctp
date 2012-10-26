@@ -78,7 +78,7 @@
 			        <?php echo $name; ?>
 			        <b class="caret"></b>
 			    </a>
-					<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+					<ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dLabel">
 					  <!-- <li><a href="#">Action</a></li>
 					  <li><a href="#">Another action</a></li>-->
 					  

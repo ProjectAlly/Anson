@@ -14,7 +14,7 @@
 ?>
 
 <ul class="breadcrumb">
-  <li><a href="#"><?php echo "Home"; ?></a> <span class="divider">/</span></li>
-  <li><a href="#"><?php echo $cont;?></a> <span class="divider">/</span></li>
+  <li><a href="../Home"><?php echo "Home"; ?></a> <span class="divider">/</span></li>
+  <li><a href="../".<?php echo $cont; ?>><?php echo $cont;?></a> <span class="divider">/</span></li>
   <li class="active"><?php echo $act?></li>
 </ul>
