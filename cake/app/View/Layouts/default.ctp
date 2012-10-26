@@ -45,10 +45,10 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 			</a>
-			<a class="brand" href="#">Project<span style="color: #52a8ec"><strong>Ally</strong></span></a>
+			<a class="brand" href="../Home">Project<span style="color: #52a8ec"><strong>Ally</strong></span></a>
 			<div class="nav-collapse">
 				<ul class="nav">
-					<li class="active"><a href="#">Home</a></li>
+					<li class="active"><a href="../Home">Home</a></li>
 					<li><a href="#about">About</a></li>
 					<li><a href="#contact">Contact</a></li>
 					<li><a href="#contact">Contact</a></li>
@@ -70,13 +70,23 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 
-			<ul class="nav nav-tabs">
-			  <li class="active">
-			    <a href="#">Hello</a>
+			<ul class="nav nav-pills" style="padding-right: 100px;">
+
+			  <li class="dropdown" style="float: right;" >
+			    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+			        <?php echo $this->Session->read('name'); ?>
+			        <b class="caret"></b>
+			    </a>
+					<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+					  <!-- <li><a href="#">Action</a></li>
+					  <li><a href="#">Another action</a></li>-->
+					  
+					  <li><a href="../Employee/userProfile">My Profile</a></li>
+					  <li class="divider"></li>
+					  <li><a href="../Home/logout">Logout</a></li>
+					</ul>			   
 			  </li>
-			  <li><a href="#">Hello</a></li>
-			  <li><a href="#">Hello</a></li>
-			</ul>
+			</ul>	
 	</div>
 
 <div class="container">
