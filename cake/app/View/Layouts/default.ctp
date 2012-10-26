@@ -69,12 +69,13 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
-
+			<?php 
+			$name = $this->Session->read('name');
+			if(isset($name)) {?>
 			<ul class="nav nav-pills" style="padding-right: 100px;">
-
 			  <li class="dropdown" style="float: right;" >
 			    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-			        <?php echo $this->Session->read('name'); ?>
+			        <?php echo $name; ?>
 			        <b class="caret"></b>
 			    </a>
 					<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
@@ -85,8 +86,10 @@
 					  <li class="divider"></li>
 					  <li><a href="../Home/logout">Logout</a></li>
 					</ul>			   
-			  </li>
-			</ul>	
+			  	</li>
+			</ul>
+			<?php } ?>
+					
 	</div>
 
 <div class="container">
