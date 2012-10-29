@@ -12,13 +12,13 @@
 		<?php 
 			$members = $project['AddProject']['projectMembers'];
 			$addedmembers = explode(",", $members);
-					foreach ($users as $proUser):
+					foreach ($users as $user):
 							foreach ($addedmembers as $addedmember):
-								if ($addedmember == $proUser['Profile']['id'])
+								if ($addedmember == $user['Profile']['id'])
 								{
 									?><tr> <td> 
-										<?php echo $this->Html->link($user['Register']['userName'], 
-													array('controller' => 'Employee', 'action' => 'viewProfile', $user['Register']['id'])); ?>
+										<?php echo $this->Html->link($user['Profile']['userName'], 
+													array('controller' => 'Employee', 'action' => 'viewProfile', $user['Profile']['id'])); ?>
 									   </td> </tr>			
 									<?php 
 								}
