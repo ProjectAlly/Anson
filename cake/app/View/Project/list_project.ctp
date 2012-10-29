@@ -4,6 +4,7 @@
 	echo $this->Html->script('jquery-1.8.0.min.js');
 	echo $this->Html->script('jquery-ui-1.8.23.custom.min.js');
 	echo $this->Html->css('jquery-ui-1.8.23.custom.css');
+	$role = $this->Session->read('role');
 	
 ?>
 <html lang="en">
@@ -36,8 +37,18 @@
 							foreach ($projects as $project):
 						?> 
 							<tr>
-								<td> <?php echo $this->Html->link($project['AddProject']['projectName'], 
-															array('controller' => 'Project', 'action' => 'viewProject', $project['AddProject']['id'])); ?> </td>
+								<td> <?php 
+											if ($role==1 || $role==2)
+											{
+												echo $this->Html->link($project['AddProject']['projectName'], 
+															array('controller' => 'Project', 'action' => 'viewProject', $project['AddProject']['id']));
+											}
+											else 
+											{
+												echo $project['AddProject']['projectName'];												
+											} 
+									  ?> 
+								</td>
 								<td> <?php echo $project['AddProject']['id'];?> </td>
 								<td> <?php echo $this->Html->link('View Members',array('controller' => 'Project', 'action' => 'viewMembers', $project['AddProject']['id']),array('class' => 'btn btn-info')); ?> </td>
 							</tr>
@@ -48,9 +59,12 @@
 					</tbody>
 				</table>
 				<?php 
-					echo $this->Html->link('Add Project',
-										array('controller' => 'Project', 'action' => 'addProject'),
-										array('class' => 'btn'));
+					if ($role==1 || $role==2)
+					{
+						echo $this->Html->link('Add Project',
+											array('controller' => 'Project', 'action' => 'addProject'),
+											array('class' => 'btn'));
+					}
 				?>
 			</div>
 		</div>

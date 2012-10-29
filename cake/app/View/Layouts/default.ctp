@@ -53,12 +53,6 @@
 					<li><a href="#contact">Contact</a></li>
 					<li><a href="#contact">Contact</a></li>
 				</ul>
-				<div style="float: right;" class="dropdown" >
-					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Dropdown trigger</a>
-					<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-						<li><input type="text"></li>
-					</ul>
-				</div>
 			</div>
 			
 			<!--/.nav-collapse -->

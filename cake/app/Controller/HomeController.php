@@ -59,21 +59,6 @@ class HomeController extends AppController {
 			$name = $this->Session->read('name');
 			$role = $this->Session->read('role');
 			if (isset($name)) {
-				/*switch ($role)
-				{
-					case 1:
-						$this->redirect(array('controller' => 'Home', 'action' => 'HomePage'));
-						break;
-					case 2:
-						$this->redirect(array('controller' => 'Admin', 'action' => 'index'));
-						break;
-					case 3:
-						$this->redirect(array('controller' => 'Employee', 'action' => 'index'));
-						break;
-					default:
-						echo "User";
-						break;
-				}*/
 			$this->redirect(array('controller' => 'Home', 'action' => 'HomePage'));
 		}
 		}
@@ -103,9 +88,6 @@ class HomeController extends AppController {
 		echo "you successfully registered with projectally....kindly wait till admin approves yours request.";
 	}
 	
-	
-	
-
 	public function message() {
 		
 	}

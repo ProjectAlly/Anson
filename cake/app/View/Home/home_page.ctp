@@ -24,9 +24,6 @@
 						echo $this->Html->link('Pending Users',array('controller' => 'Employee', 'action' => 'pendingUsers'),
 																	array('class' => 'btn'));
 					}
-					//controller and action are yet to be made for profile and add project button
-					echo $this->Html->link('Profile',array('controller' => 'Employee', 'action' => 'userProfile'),
-															array('class' => 'btn'));
 					echo $this->Html->link('Project',array('controller' => 'Project', 'action' => 'listProject'),
 															array('class' => 'btn'));
 				?>
