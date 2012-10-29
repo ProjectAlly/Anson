@@ -5,7 +5,7 @@
 		public $components = array('Session');
 
 		
-		public $uses = array('UserInfo', 'Register','Profile');
+		public $uses = array('UserInfo', 'Profile','Profile');
 
 		public function beforeFilter() {
 			
@@ -25,54 +25,42 @@
 			$title_for_layout = 'Home';
 			$this->set(compact('title_for_layout'));
 
-			$this -> set('users', $this->Register->find('all' ,array('conditions' => 
-																	array('Register.id >' => 'Register.id',
-																	'Register.status' => '1'))));
+			$this -> set('users', $this->Profile->find('all' ,array('conditions' => 
+																	array('Profile.id >' => 'Profile.id',
+																	'Profile.status' => '1'))));
 		}
 
 		//new methods
 		
 		public function pendingUsers() {
 			$this->set(compact('title_for_layout'));
-			$this->set('users', $this->Register->find('all'));
+			$this->set('proUser', $this->Profile->find('all'));
 		}
 		
 		public function viewProfile($id = null){
-			$this->Register->id = $id;
-			$this->set('user', $this->Register->find('first', array('conditions' => array('Register.id' => $id))));
+			$this->Profile->id = $id;
 			$this->set('proUser', $this->Profile->find('first', array('conditions' => array('Profile.id' => $id))));
 		}
 		
 		public function removeUser($id = null) {
-			$this->Register->id = $id;
-			$this->Register->delete($id);
+			$this->Profile->id = $id;
+			$this->Profile->delete($id);
 			$this->redirect(array('controller' => 'Employee', 'action' => 'pendingUsers'));
 		}
 		
 		public function approveUser($id = null) {
-			$this->Register->id = $id;
-			$this->Register->updateAll(array('Register.status' => '1'), array('Register.id' => $id));
+			$this->Profile->id = $id;
+			$this->Profile->updateAll(array('Profile.status' => '1'), array('Profile.id' => $id));
 			
-			//Problem in creating profile of User.... Data is not saved in Profile table.... Will have to look at this once...
-			
-			$this->set('user', $this->Register->find('first',array('conditions' => array('Register.id' => $id))));
-			
-			$this->Profile->save(array('Profile.id' => $user['Register']['id'],
-							'Profile.userName' => $user['Register']['userName'],
-							'Profile.inputEmail' => $user['Register']['inputEmail']));
 			$this->redirect(array('controller' => 'Employee', 'action' => 'pendingUsers'));
 		}
 		
 		public function userProfile() {
-			$this->set('user', $this->Register->find('first', array('conditions' => 
-													array('Register.id' => $this->Session->read('id')))));
 			$this->set('proUser', $this->Profile->find('first', array('conditions' => 
 													array('Profile.id' => $this->Session->read('id')))));
 		}
 		
 		public function editProfile(){
-			$this->set('user', $this->Register->find('first', array('conditions' => 
-														array('Register.id' => $this->Session->read('id')))));
 			$this->set('proUser', $this->Profile->find('first', array('conditions' => 
 														array('Profile.id' => $this->Session->read('id')))));
 		}
@@ -89,9 +77,9 @@
 											'Profile.userHome' => "'".$this->data['Profile']['userHome']."'"),
 									  array('Profile.id' => $this->Session->read('id')));
 				
-			$this->Register->updateAll(array('Register.userName' => "'".$this->data['Profile']['userName']."'",
-											'Register.inputEmail' => "'".$this->data['Profile']['inputEmail']."'"),
-									  array('Register.id' => $this->Session->read('id')));
+			$this->Profile->updateAll(array('Profile.userName' => "'".$this->data['Profile']['userName']."'",
+											'Profile.inputEmail' => "'".$this->data['Profile']['inputEmail']."'"),
+									  array('Profile.id' => $this->Session->read('id')));
 			
 			$this->redirect(array('controller' => 'Employee', 'action' => 'userProfile'));
 		}

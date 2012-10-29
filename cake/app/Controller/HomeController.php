@@ -45,7 +45,7 @@ class HomeController extends AppController {
  *
  * @var array
  */
-	public $uses = array('UserInfo', 'Register', 'Profile','AddProject');
+	public $uses = array('UserInfo', 'Profile','AddProject');
 
 /**
  * Displays a view
@@ -69,7 +69,7 @@ class HomeController extends AppController {
 		$title_for_layout = 'Home';
 		$this->set(compact('title_for_layout'));
 		if(!empty($this->data)){
-			if($this->Register->save($this->data)){
+			if($this->Profile->save($this->data)){
 				echo "successful";
 				$this->Session->setFlash('Your stuff has been saved.');
 				$this->redirect(array('controller' => 'Home', 'action' => 'index'));

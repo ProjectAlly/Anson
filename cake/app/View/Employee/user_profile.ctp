@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php 
 	
 	echo $this->Html->script('jquery-1.8.0.min.js');
@@ -24,14 +23,14 @@
 				<!-- Main content -->
 				<!-- form using cakephp -->
 				<?php //echo $this->Html->image($proUser['Profile']['userPhoto'], array('class' => 'img-polaroid'));?>
-				<h1><?php echo $user['Register']['userName']; ?></h1><br/>
+				<h1><?php echo $proUser['Profile']['userName']; ?></h1><br/>
 				Gender: <?php if(isset($proUser['Profile']['userGender'])) 
 								echo $proUser['Profile']['userGender'];
 						?><br/><br/>
 				
-				Company: <?php echo $user['Register']['companyName']; ?><br/><br/>
+				Company: <?php echo $proUser['Profile']['companyName']; ?><br/><br/>
 				
-				Email Id: <?php echo $user['Register']['inputEmail']; ?><br/><br/>
+				Email Id: <?php echo $proUser['Profile']['inputEmail']; ?><br/><br/>
 				
 				Date Of Birth: <?php if(isset($proUser['Profile']['userDob'])) 
 								echo $proUser['Profile']['userDob']; ?><br/><br/>

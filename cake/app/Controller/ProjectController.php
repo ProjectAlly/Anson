@@ -1,7 +1,7 @@
 <?php
 	class ProjectController extends AppController {	
 		
-		public $uses = array('AddProject','Register');
+		public $uses = array('AddProject','Profile');
 		
 		public function listProject() {
 			$this->set(compact('title_for_layout'));
@@ -12,18 +12,18 @@
 			$this->AddProject->id = $id;
 			$this->set('project', $this->AddProject->find('first', array('conditions' => 
 																		array('AddProject.id' => $id))));
-			$this->set('users', $this->Register->find('all' ,array('conditions' => 
-																	array('Register.id >' => 'Register.id',
-																	'Register.status' => '1'))));
+			$this->set('users', $this->Profile->find('all' ,array('conditions' => 
+																	array('Profile.id >' => 'Profile.id',
+																	'Profile.status' => '1'))));
 		}
 		
 		public function viewMembers($id = null) {
 		$this->AddProject->id = $id;
 		$this->set('project', $this->AddProject->find('first', array('conditions' => 
 																	array('AddProject.id' => $id))));
-		$this -> set('users', $this->Register->find('all' ,array('conditions' => 
-																array('Register.id >' => 'Register.id',
-																'Register.status' => '1'))));
+		$this -> set('users', $this->Profile->find('all' ,array('conditions' => 
+																array('Profile.id >' => 'Profile.id',
+																'Profile.status' => '1'))));
 		}
 		
 		public function addProject() {

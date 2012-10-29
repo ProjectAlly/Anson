@@ -44,13 +44,13 @@
 					echo "<div class=\"control-group\">";
 						echo $this->Form->label('userName', 'Name', array('class' => 'control-label'));
 						echo $this->Form->input('userName', array('label' => false,
-															'value' => $user['Register']['userName']));
+															'value' => $proUser['Profile']['userName']));
 					echo "</div>";
 				
 					echo "<div class=\"control-group\">";
 						echo $this->Form->label('inputEmail', 'Email', array('class' => 'control-label'));
 						echo $this->Form->input('inputEmail', array('label' => false,
-															'value' => $user['Register']['inputEmail']));
+															'value' => $proUser['Profile']['inputEmail']));
 						echo "</div>";
 
 					echo "<div class=\"control-group\">";

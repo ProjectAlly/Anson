@@ -46,13 +46,13 @@
 						<?php
 							$members = $project['AddProject']['projectMembers'];
 							$addedmembers = explode(",", $members);
-							foreach ($users as $user):
+							foreach ($users as $proUser):
 						?> 
 							<tr>
 								<?php 
 									foreach ($addedmembers as $addedmember):
 										//echo $addedmember . "<br>";
-										if ($addedmember != $user['Register']['id'])
+										if ($addedmember != $proUser['Profile']['id'])
 										{
 											$flag = 0;
 										}
@@ -65,10 +65,10 @@
 									if ($flag == 0)
 									{
 								?>
-								<td> <?php echo $this->Html->link($user['Register']['userName'], 
-															array('controller' => 'Employee', 'action' => 'viewProfile', $user['Register']['id'])); ?> </td>
-								<td> <?php echo $user['Register']['companyName'];?> </td>
-								<td> <?php echo $this->Html->link('Add User', array('controller' => 'Project', 'action' =>'addMember','user_id' => $user['Register']['id'], 'proj_id' => $project['AddProject']['id'])); ?>
+								<td> <?php echo $this->Html->link($proUser['Profile']['userName'], 
+															array('controller' => 'Employee', 'action' => 'viewProfile', $proUser['Profile']['id'])); ?> </td>
+								<td> <?php echo $proUser['Profile']['companyName'];?> </td>
+								<td> <?php echo $this->Html->link('Add User', array('controller' => 'Project', 'action' =>'addMember','user_id' => $proUser['Profile']['id'], 'proj_id' => $project['AddProject']['id'])); ?>
 							    </td>
 							    <?php 
 									}

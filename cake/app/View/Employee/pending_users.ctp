@@ -35,19 +35,19 @@
 					</thead>
 					<tbody>
 						<?php
-						foreach ($users as $user):
-						if($user['Register']['status'] == '1'){
+						foreach ($proUser as $user):
+						if($user['Profile']['status'] == '1'){
 						?> 
 							<tr>
-								<td> <?php echo $this->Html->link($user['Register']['userName'], 
-															array('controller' => 'Employee', 'action' => 'viewProfile', $user['Register']['id'])); ?> </td>
-								<td> <?php echo $user['Register']['companyName'];?> </td>
+								<td> <?php echo $this->Html->link($user['Profile']['userName'], 
+															array('controller' => 'Employee', 'action' => 'viewProfile', $user['Profile']['id'])); ?> </td>
+								<td> <?php echo $user['Profile']['companyName'];?> </td>
 								<td> <?php echo "Approved"; ?> </td>
 								<td></td>
 								<td>
 									<i class="icon-remove"></i>
 									<?php 
-										echo $this->Html->link('Remove User', array('controller' => 'Employee', 'action' =>'removeUser', $user['Register']['id']),
+										echo $this->Html->link('Remove User', array('controller' => 'Employee', 'action' =>'removeUser', $user['Profile']['id']),
 															 						array(), "Are you sure you wish to remove this user?");
 									?>
 								</td>
@@ -57,21 +57,21 @@
 						else{
 							?> 
 							<tr>
-								<td> <?php echo $this->Html->link($user['Register']['userName'], 
-															array('controller' => 'Home', 'action' => 'viewProfile', $user['Register']['id'])); ?> </td>
-								<td> <?php echo $user['Register']['companyName'];?> </td>
+								<td> <?php echo $this->Html->link($user['Profile']['userName'], 
+															array('controller' => 'Employee', 'action' => 'viewProfile', $user['Profile']['id'])); ?> </td>
+								<td> <?php echo $user['Profile']['companyName'];?> </td>
 								<td> <?php echo "Pending"; ?> </td>
 								<td>
 									<i class="icon-ok"></i>
 									<?php 
-										echo $this->Html->link('Approve User', array('controller' => 'Employee', 'action' =>'approveUser', $user['Register']['id']),
+										echo $this->Html->link('Approve User', array('controller' => 'Employee', 'action' =>'approveUser', $user['Profile']['id']),
 															 array(), "Approve User?"); 
 									?> 
 								</td>
 								<td>
 									<i class="icon-remove"></i>
 									<?php 
-										echo $this->Html->link('Remove User', array('controller' => 'Employee', 'action' =>'removeUser', $user['Register']['id']),
+										echo $this->Html->link('Remove User', array('controller' => 'Employee', 'action' =>'removeUser', $user['Profile']['id']),
 															 array(), "Are you sure you want to remove this user?");
 									?>
 								</td>

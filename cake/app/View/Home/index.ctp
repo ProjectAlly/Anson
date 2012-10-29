@@ -88,7 +88,7 @@
 						<legend> Register with ProjectAlly </legend>
 				
 					<table>
-					<?php echo $this->Form->create('Register',array('class' => 'AdvancedForm',
+					<?php echo $this->Form->create('Profile',array('class' => 'AdvancedForm',
 														'url' => array('controller' => 'Home',
 														'action' => 'index')));?>
 					<tr>

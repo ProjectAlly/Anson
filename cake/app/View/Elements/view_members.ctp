@@ -12,9 +12,9 @@
 		<?php 
 			$members = $project['AddProject']['projectMembers'];
 			$addedmembers = explode(",", $members);
-					foreach ($users as $user):
+					foreach ($users as $proUser):
 							foreach ($addedmembers as $addedmember):
-								if ($addedmember == $user['Register']['id'])
+								if ($addedmember == $proUser['Profile']['id'])
 								{
 									?><tr> <td> 
 										<?php echo $this->Html->link($user['Register']['userName'], 
