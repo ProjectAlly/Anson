@@ -5,12 +5,12 @@
 		public $components = array('Session');
 
 		
-		public $uses = array('UserInfo', 'Profile','Profile');
+		public $uses = array('UserInfo', 'Profile');
 
-		public function beforeFilter() {
+/*		public function beforeFilter() {
 			
 			//to prevent going back after logout is clicked
-			$this->disableCache();
+			//$this->disableCache();
 			
 			$name = $this->Session->read('name');
 			if (isset($name)) {
@@ -19,7 +19,7 @@
 			else {
 				$this->redirect(array('controller' => 'Home', 'action' => 'index'));
 			}
-		}
+		}*/
 		
 		public function index() {
 			$title_for_layout = 'Home';

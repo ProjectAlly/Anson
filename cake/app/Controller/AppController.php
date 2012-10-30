@@ -32,20 +32,24 @@ App::uses('Controller', 'Controller');
  * @link http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
-	public $components = array('DebugKit.Toolbar');
+	public $components = array('DebugKit.Toolbar', 'Session');
 	var $helpers = array('AssetCompress.AssetCompress');
 	
-	public $uses = array('UserInfo');
+	public $uses = array('UserInfo', 'Profile', 'AddProject');
 	//Manually defined functions
 	
-	/*public function beforeFilter(){
+	public function beforeFilter(){
+		$notify = $this->Profile->find('count', array('conditions' => array('Profile.status' => 0)));
+		$this->set(compact('notify'));
+		
 		$name = $this->Session->read('name');
+		
 		if (isset($name)) {
 			
 		}else {
 			$this->redirect(array('controller' => 'Home', 'action' => 'index'));
 		}
-	}*/
+	}
 	public function authenticate() {
 		//function to authenticate a user
 		$test = $this->UserInfo->Find('first',array('conditions' => 
@@ -53,12 +57,7 @@ class AppController extends Controller {
 													  'UserInfo.inputPassword' => $this->data['UserInfo']['inputPassword'],
 													  'UserInfo.status' => '1')));
 		
-												
-		
-												
 		echo "<pre>";
-		
-		
 		//print_r($test);
 		
 		if ($test == null)
@@ -86,6 +85,5 @@ class AppController extends Controller {
 		$this->redirect(array('controller' => 'home', 'action' => 'index'));
 	}
 	
-
 }
 

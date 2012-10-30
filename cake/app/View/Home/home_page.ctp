@@ -19,6 +19,7 @@
 				<!-- Main content -->
 				<!-- form using cakephp -->
 				<?php
+				
 					if ($role == 1)
 					{ 
 						echo $this->Html->link('Pending Users',array('controller' => 'Employee', 'action' => 'pendingUsers'),

@@ -3,6 +3,7 @@
 		
 		public $uses = array('AddProject','Profile');
 		
+		
 		public function listProject() {
 			$this->set(compact('title_for_layout'));
 			$this->set('projects', $this->AddProject->find('all'));

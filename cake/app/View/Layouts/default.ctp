@@ -63,13 +63,22 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
-			<?php 
+
+
+			<?php
+				 
 			$name = $this->Session->read('name');
 			if(isset($name)) {?>
 			<ul class="nav nav-pills">
+				<li class="pull-right">
+				    <?php 
+						echo $this->Html->link($notify,array('controller' => 'Employee', 'action' => 'pendingUsers'),array('class' => 'btn'));
+					?>
+				</li>
 			  	<li class="dropdown pull-right">
 				    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
 				        <?php echo $name; ?>
+				        
 				        <b class="caret"></b>
 				    </a>
 					<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
@@ -79,7 +88,8 @@
 					  <li><a href="../Employee/userProfile">My Profile</a></li>
 					  <li class="divider"></li>
 					  <li><a href="../Home/logout">Logout</a></li>
-					</ul>			   
+					</ul>
+								   
 			  	</li>
 			</ul>
 			<?php } ?>

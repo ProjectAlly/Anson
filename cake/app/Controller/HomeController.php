@@ -62,13 +62,7 @@ class HomeController extends AppController {
 			if (isset($name)) {
 				$this->redirect(array('controller' => 'Home', 'action' => 'HomePage'));
 			}
-		}else {
-				echo "you need to login";
-			}
-		
-		
-		
-		
+		}
 	}
 	
 	public function index() {
@@ -87,7 +81,8 @@ class HomeController extends AppController {
 	}
 	
 	public function HomePage() {
-		
+		$notify = $this->Profile->find('count', array('conditions' => array('Profile.status' => 0)));
+		$this->set(compact('notify'));
 	}
 	
 	public function test() {
