@@ -37,6 +37,15 @@ class AppController extends Controller {
 	
 	public $uses = array('UserInfo');
 	//Manually defined functions
+	
+	/*public function beforeFilter(){
+		$name = $this->Session->read('name');
+		if (isset($name)) {
+			
+		}else {
+			$this->redirect(array('controller' => 'Home', 'action' => 'index'));
+		}
+	}*/
 	public function authenticate() {
 		//function to authenticate a user
 		$test = $this->UserInfo->Find('first',array('conditions' => 
@@ -49,9 +58,7 @@ class AppController extends Controller {
 												
 		echo "<pre>";
 		
-		$this->Session->write('name',$test['UserInfo']['userName']);
-		$this->Session->write('role',$test['UserInfo']['userRole']);
-		$this->Session->write('id',$test['UserInfo']['id']);
+		
 		//print_r($test);
 		
 		if ($test == null)
@@ -61,6 +68,9 @@ class AppController extends Controller {
 		else 
 		{
 			echo "login successful";
+			$this->Session->write('name',$test['UserInfo']['userName']);
+			$this->Session->write('role',$test['UserInfo']['userRole']);
+			$this->Session->write('id',$test['UserInfo']['id']);
 			$this->redirect(array('controller' => 'Home', 'action' => 'HomePage'));
 			exit();
 			
@@ -75,6 +85,7 @@ class AppController extends Controller {
 		$this->Session->destroy();
 		$this->redirect(array('controller' => 'home', 'action' => 'index'));
 	}
+	
 
 }
 

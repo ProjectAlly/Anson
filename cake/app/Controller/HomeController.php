@@ -55,13 +55,19 @@ class HomeController extends AppController {
  */
 	
 	public function beforeFilter() {
-		if ($this->action == 'index') {
+		//$this->disableCache();
+		if ($this->params['action'] == 'index') {
 			$name = $this->Session->read('name');
 			$role = $this->Session->read('role');
 			if (isset($name)) {
-			$this->redirect(array('controller' => 'Home', 'action' => 'HomePage'));
-		}
-		}
+				$this->redirect(array('controller' => 'Home', 'action' => 'HomePage'));
+			}
+		}else {
+				echo "you need to login";
+			}
+		
+		
+		
 		
 	}
 	
