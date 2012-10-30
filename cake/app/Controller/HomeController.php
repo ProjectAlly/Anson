@@ -55,6 +55,9 @@ class HomeController extends AppController {
  */
 	
 	public function beforeFilter() {
+		$notify = $this->Profile->find('count', array('conditions' => array('Profile.status' => 0)));
+		$this->set(compact('notify'));
+		
 		//$this->disableCache();
 		if ($this->params['action'] == 'index') {
 			$name = $this->Session->read('name');
@@ -81,8 +84,7 @@ class HomeController extends AppController {
 	}
 	
 	public function HomePage() {
-		$notify = $this->Profile->find('count', array('conditions' => array('Profile.status' => 0)));
-		$this->set(compact('notify'));
+
 	}
 	
 	public function test() {
