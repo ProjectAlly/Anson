@@ -66,15 +66,18 @@
 
 
 			<?php
-				 
+			$role = $this->Session->read('role');	 
 			$name = $this->Session->read('name');
 			if(isset($name)) {?>
 			<ul class="nav nav-pills">
+				<?php if ($role == 1)
+				{?>
 				<li class="pull-right">
 				    <?php 
 						echo $this->Html->link($notify,array('controller' => 'Employee', 'action' => 'pendingUsers'),array('class' => 'btn'));
 					?>
 				</li>
+				<?php } ?>
 			  	<li class="dropdown pull-right">
 				    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
 				        <?php echo $name; ?>
