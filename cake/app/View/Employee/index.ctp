@@ -11,13 +11,7 @@
 		<div class="row-fluid">
 			<div class="span2">
 				<!-- Sidebar content -->
-				<?php 
-					echo $this->Html->link('Logout',array('controller' => 'Home', 'action' => 'logout'),array('class' => 'btn'));
-				?>
-				
-				<?php 
-				  	echo $this->Session->read('name');
-				?>
+				<?php echo $this->element('sidebar/fix_side'); ?>
 			</div>
 			<div class="span10">
 				<!-- Main content -->
