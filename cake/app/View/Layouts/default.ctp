@@ -74,7 +74,7 @@
 				{?>
 				<li class="pull-right">
 				    <?php 
-						echo $this->Html->link($notify,array('controller' => 'Employee', 'action' => 'pendingUsers'),array('class' => 'btn'));
+						echo $this->Html->link($notify,array('controller' => 'Employee', 'action' => 'pendingUsers'),array('class' => 'badge badge-important'));
 					?>
 				</li>
 				<?php } ?>
