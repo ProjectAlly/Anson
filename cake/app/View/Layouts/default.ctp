@@ -66,6 +66,7 @@
 
 
 			<?php
+			//Following code is to notify number of pending users to superadmin.
 			$role = $this->Session->read('role');	 
 			$name = $this->Session->read('name');
 			if(isset($name)) {?>
@@ -77,7 +78,10 @@
 						echo $this->Html->link($notify,array('controller' => 'Employee', 'action' => 'pendingUsers'),array('class' => 'badge badge-important'));
 					?>
 				</li>
-				<?php } ?>
+				<?php } 
+				//code ends here
+				?>
+				<!-- Code for logout and myprofile -->
 			  	<li class="dropdown pull-right">
 				    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
 				        <?php echo $name; ?>
@@ -95,8 +99,9 @@
 								   
 			  	</li>
 			</ul>
+			
 			<?php } ?>
-					
+			<!-- code ends here -->		
 	</div>
 
 <div class="container">

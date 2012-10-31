@@ -39,11 +39,12 @@ class AppController extends Controller {
 	//Manually defined functions
 	
 	public function beforeFilter(){
+		//next two line is to count the number of pending users
 		$notify = $this->Profile->find('count', array('conditions' => array('Profile.status' => 0)));
 		$this->set(compact('notify'));
 		
+		//To check whether an user is logged in or not
 		$name = $this->Session->read('name');
-		
 		if (isset($name)) {
 			
 		}else {
@@ -74,9 +75,7 @@ class AppController extends Controller {
 			exit();
 			
 		}
-		//echo $test['UserInfo']['accessPermission']; 
 		exit();
-		//print_r($this->UserInfo->Find('first'));
 	}
 	
 	public function logout() {
