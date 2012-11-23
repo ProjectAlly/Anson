@@ -17,29 +17,42 @@
 				<div class="span10">
 				<!-- Main content -->
 				<!-- form using cakephp -->
-				<?php //echo $this->Html->image($proUser['Profile']['userPhoto'], array('class' => 'img-polaroid'));?>
+				<?php echo $this->Html->image($proUser['Profile']['userPhoto'], array('class' => 'img-polaroid'));?>
 				<h1><?php echo $proUser['Profile']['userName']; ?></h1><br/>
-				Gender: <?php if(isset($proUser['Profile']['userGender'])) 
-								echo $proUser['Profile']['userGender'];
-						?><br/><br/>
 				
-				Company: <?php echo $proUser['Profile']['companyName']; ?><br/><br/>
+				Company 
+				<?php 
+					echo $proUser['Profile']['companyName']; 
+				?><br/><br/>
 				
-				Email Id: <?php echo $proUser['Profile']['inputEmail']; ?><br/><br/>
+				Email Id
+				<?php 
+					echo $proUser['Profile']['inputEmail']; 
+				?><br/><br/>
 				
-				Date Of Birth: <?php if(isset($proUser['Profile']['userDob'])) 
-								echo $proUser['Profile']['userDob']; ?><br/><br/>
+				Date Of Birth 
+				<?php 
+					if(isset($proUser['Profile']['userDob'])) 
+							echo $proUser['Profile']['userDob']; 
+				?><br/><br/>
 				
-				Work Email Id: <?php if(isset($proUser['Profile']['workEmail'])) 
-								echo $proUser['Profile']['workEmail']; ?><br/><br/>
+				Work Email Id
+				<?php 
+					if(isset($proUser['Profile']['workEmail'])) 
+							echo $proUser['Profile']['workEmail']; ?><br/><br/>
 				
-				Address: <?php if(isset($proUser['Profile']['userAddress'])) 
-								echo $proUser['Profile']['userAddress']; ?><br/><br/>
+				Address 
+				<?php 
+					if(isset($proUser['Profile']['userAddress'])) 
+							echo $proUser['Profile']['userAddress']; ?><br/><br/>
 				
-				Contacts: <?php if(isset($proUser['Profile']['userMobile'])) 
-								echo $proUser['Profile']['userMobile']; ?><br/>
+				Contacts
+				<?php 
+					if(isset($proUser['Profile']['userMobile'])) 
+							echo $proUser['Profile']['userMobile']; ?><br/>
 				
-						  <?php	if(isset($proUser['Profile']['userHome'])) 
+				Home
+				<?php	if(isset($proUser['Profile']['userHome'])) 
 								echo $proUser['Profile']['userHome']; ?>
 				<br/> <br/>
 			</div>

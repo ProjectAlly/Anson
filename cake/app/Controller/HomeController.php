@@ -76,11 +76,10 @@ class HomeController extends AppController {
 			if($this->Profile->save($this->data)){
 				echo "successful";
 				$this->Session->setFlash('Your stuff has been saved.');
-				$this->redirect(array('controller' => 'Home', 'action' => 'index'));
 			} else {
 				$this->Session->setFlash('Something went wrong please try again.');
-				$this->redirect(array('controller' => 'Home', 'action' => 'index'));
 			}
+		$this->redirect(array('controller' => 'Home', 'action' => 'index'));
 		}
 	}
 	

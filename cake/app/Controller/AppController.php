@@ -81,7 +81,7 @@ class AppController extends Controller {
 	public function logout() {
 		//function to logout
 		$this->Session->destroy();
-		$this->redirect(array('controller' => 'home', 'action' => 'index'));
+		$this->redirect(array('controller' => 'Home', 'action' => 'index'));
 	}
 	
 }

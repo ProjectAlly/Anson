@@ -15,7 +15,7 @@
 				<!-- Modal -->
 				<div style="display: none;" class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 				  <div class="modal-header">
-				    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i></button>
 				    <h3 id="myModalLabel">Login</h3>
 				  </div>
 				  <div class="modal-body">
@@ -63,10 +63,6 @@
 					echo "</div>";
 					?>		
 				  </div>
-				  <div class="modal-footer">
-				    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-				    <button class="btn btn-primary">Save changes</button>
-				  </div>
 				</div>
 			</div>
 			<div class="span10">
@@ -85,7 +81,7 @@
 					//at present model name isn't specified....it will be specified as per
 					//requirement.
 				?>
-						<legend> Register with ProjectAlly </legend>
+						<legend> Register with Project<span style="color: #52a8ec"><strong>Ally</strong></span> </legend>
 				
 					<table>
 					<?php echo $this->Form->create('Profile',array('class' => 'AdvancedForm',

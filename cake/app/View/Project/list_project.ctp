@@ -11,7 +11,16 @@
 		<div class="row-fluid">
 			<div class="span2">
 				<!-- Sidebar content -->
-				<?php echo $this->element('sidebar/fix_side'); ?>
+				<?php 
+					echo $this->element('sidebar/fix_side');
+					if ($role==1 || $role==2)
+					{
+						echo $this->Html->link('Add Project',
+											array('controller' => 'Project', 'action' => 'addProject'),
+											array('class' => 'btn'));
+					}
+				?>
+				
 			</div>
 			<div class="span10">
 				<!-- Main content -->
@@ -21,7 +30,6 @@
 					<thead>
 						<tr>
 							<th>Project Title</th>
-							<th>Company Name</th>
 							<th></th>
 						</tr>
 					</thead>
@@ -42,7 +50,6 @@
 											} 
 									  ?> 
 								</td>
-								<td> <?php echo $project['AddProject']['id'];?> </td>
 								<td> <?php echo $this->Html->link('View Members',array('controller' => 'Project', 'action' => 'viewMembers', $project['AddProject']['id']),array('class' => 'btn btn-info')); ?> </td>
 							</tr>
 						<?php
@@ -51,14 +58,6 @@
 						?>
 					</tbody>
 				</table>
-				<?php 
-					if ($role==1 || $role==2)
-					{
-						echo $this->Html->link('Add Project',
-											array('controller' => 'Project', 'action' => 'addProject'),
-											array('class' => 'btn'));
-					}
-				?>
 			</div>
 		</div>
 	</div>

@@ -13,12 +13,6 @@
 				<!-- Main content -->
 				<!-- form using cakephp -->
 				<?php
-				
-					if ($role == 1)
-					{ 
-						echo $this->Html->link('Pending Users',array('controller' => 'Employee', 'action' => 'pendingUsers'),
-																	array('class' => 'btn'));
-					}
 					echo $this->Html->link('Project',array('controller' => 'Project', 'action' => 'listProject'),
 															array('class' => 'btn'));
 				?>

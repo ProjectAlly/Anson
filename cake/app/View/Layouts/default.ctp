@@ -51,7 +51,6 @@
 					<li class="active"><a href="../Home">Home</a></li>
 					<li><a href="#about">About</a></li>
 					<li><a href="#contact">Contact</a></li>
-					<li><a href="#contact">Contact</a></li>
 				</ul>
 			</div>
 			
@@ -73,7 +72,7 @@
 			<ul class="nav nav-pills">
 				<?php if ($role == 1)
 				{?>
-				<li class="pull-right">
+				<li class="pull-right" style="padding-right: 110px;">
 				    <?php 
 						echo $this->Html->link($notify,array('controller' => 'Employee', 'action' => 'pendingUsers'),array('class' => 'badge badge-important'));
 					?>
@@ -114,7 +113,7 @@
 	<hr>
 	<footer>
 	<p>
-		&copy; Company 2012
+		&copy; 2012 Aecor Technologies
 	</p>
 	</footer>
 </div>

@@ -14,7 +14,7 @@
 				<?php echo $this->element('sidebar/fix_side'); ?>
 			</div>
 			<div class="span10">
-				<?php 	echo $this->element('crumbs'); ?>
+				<?php 	//echo $this->element('crumbs'); ?>
 				<!-- Main content -->
 				<!-- form using cakephp -->
 				<table class="table table-hover">
@@ -36,7 +36,7 @@
 								<td> <?php echo $this->Html->link($user['Profile']['userName'], 
 															array('controller' => 'Employee', 'action' => 'viewProfile', $user['Profile']['id'])); ?> </td>
 								<td> <?php echo $user['Profile']['companyName'];?> </td>
-								<td> <?php echo "Approved"; ?> </td>
+								<td> <?php echo $this->Html->tag('span', 'Approved', array('class' => 'label label-success')); ?> </td>
 								<td></td>
 								<td>
 									<i class="icon-remove"></i>
@@ -54,7 +54,7 @@
 								<td> <?php echo $this->Html->link($user['Profile']['userName'], 
 															array('controller' => 'Employee', 'action' => 'viewProfile', $user['Profile']['id'])); ?> </td>
 								<td> <?php echo $user['Profile']['companyName'];?> </td>
-								<td> <?php echo "Pending"; ?> </td>
+								<td> <?php echo $this->Html->tag('span', 'Pending', array('class' => 'label label-important')); ?> </td>
 								<td>
 									<i class="icon-ok"></i>
 									<?php 
