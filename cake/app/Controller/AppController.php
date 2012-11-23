@@ -59,21 +59,27 @@ class AppController extends Controller {
 		
 		echo "<pre>";
 		//print_r($test);
+		$name = $this->Session->read('name');
+		if (!isset($name)) {
 			if ($test == null)
-			{
-				$this->redirect(array('controller' => 'Home', 'action' => 'loginfailure'));
-			}
-			else 
-			{
-				echo "login successful";
-				$this->Session->write('name',$test['UserInfo']['userName']);
-				$this->Session->write('role',$test['UserInfo']['userRole']);
-				$this->Session->write('id',$test['UserInfo']['id']);
-				$this->redirect(array('controller' => 'Home', 'action' => 'HomePage'));
-				exit();
-			}
-		
-		exit();
+				{
+					$this->redirect(array('controller' => 'Home', 'action' => 'loginfailure'));
+				}
+				else 
+				{
+					echo "login successful";
+					$this->Session->write('name',$test['UserInfo']['userName']);
+					$this->Session->write('role',$test['UserInfo']['userRole']);
+					$this->Session->write('id',$test['UserInfo']['id']);
+					$this->redirect(array('controller' => 'Home', 'action' => 'HomePage'));
+					exit();
+				}
+			
+			exit();
+		}
+		else{
+			echo "Already logged in";		
+		}
 	}
 	
 	public function logout() {
