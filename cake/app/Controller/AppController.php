@@ -46,7 +46,6 @@ class AppController extends Controller {
 		//To check whether an user is logged in or not
 		$name = $this->Session->read('name');
 		if (isset($name)) {
-			
 		}else {
 			$this->redirect(array('controller' => 'Home', 'action' => 'index'));
 		}
@@ -60,21 +59,20 @@ class AppController extends Controller {
 		
 		echo "<pre>";
 		//print_r($test);
+			if ($test == null)
+			{
+				$this->redirect(array('controller' => 'Home', 'action' => 'loginfailure'));
+			}
+			else 
+			{
+				echo "login successful";
+				$this->Session->write('name',$test['UserInfo']['userName']);
+				$this->Session->write('role',$test['UserInfo']['userRole']);
+				$this->Session->write('id',$test['UserInfo']['id']);
+				$this->redirect(array('controller' => 'Home', 'action' => 'HomePage'));
+				exit();
+			}
 		
-		if ($test == null)
-		{
-			$this->redirect(array('controller' => 'Home', 'action' => 'loginfailure'));
-		}
-		else 
-		{
-			echo "login successful";
-			$this->Session->write('name',$test['UserInfo']['userName']);
-			$this->Session->write('role',$test['UserInfo']['userRole']);
-			$this->Session->write('id',$test['UserInfo']['id']);
-			$this->redirect(array('controller' => 'Home', 'action' => 'HomePage'));
-			exit();
-			
-		}
 		exit();
 	}
 	

@@ -45,10 +45,10 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 			</a>
-			<a class="brand" href="../Home">Project<span style="color: #52a8ec"><strong>Ally</strong></span></a>
+			<a class="brand" href="..Anson/Home">Project<span style="color: #52a8ec"><strong>Ally</strong></span></a>
 			<div class="nav-collapse">
 				<ul class="nav">
-					<li class="active"><a href="../Home">Home</a></li>
+					<li class="active"><a href="..Anson/Home">Home</a></li>
 					<li><a href="#about">About</a></li>
 					<li><a href="#contact">Contact</a></li>
 				</ul>
@@ -72,7 +72,7 @@
 			<ul class="nav nav-pills">
 				<?php if ($role == 1)
 				{?>
-				<li class="pull-right" style="padding-right: 110px;">
+				<li class="pull-right">
 				    <?php 
 						echo $this->Html->link($notify,array('controller' => 'Employee', 'action' => 'pendingUsers'),array('class' => 'badge badge-important'));
 					?>
