@@ -87,6 +87,5 @@ class AppController extends Controller {
 		$this->Session->destroy();
 		$this->redirect(array('controller' => 'Home', 'action' => 'index'));
 	}
-	
 }
 
