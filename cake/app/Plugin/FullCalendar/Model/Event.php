@@ -11,9 +11,9 @@
  */
  
 class Event extends FullCalendarAppModel {
-	var $name = 'Event';
-	var $displayField = 'title';
-	var $validate = array(
+	public  $name = 'Event';
+	public  $displayField = 'title';
+	public  $validate = array(
 		'title' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),

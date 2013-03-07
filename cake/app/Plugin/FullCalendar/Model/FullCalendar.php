@@ -12,8 +12,8 @@
  
 class FullCalendar extends FullCalendarAppModel {
 
-	var $useTable = false;
-	var $name = 'FullCalendar';
+	public $useTable = false;
+	public $name = 'FullCalendar';
 
 }
 ?>
